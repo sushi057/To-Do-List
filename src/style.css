@@ -50,6 +50,7 @@ body{
     padding: 19px;
     margin-right: 10px;
     cursor: pointer;
+    box-shadow: 1px 1px 1px;
 }
 
 .profile-text #name{
@@ -68,6 +69,10 @@ body{
     display: flex;
     justify-content: space-between;
 }
+
+/* .section p{
+    box-shadow: 1px 1px 1px 1px;
+} */
 
 .section p.no{
     color: darkblue;
@@ -103,6 +108,14 @@ div.final-top-cat{
     padding: 12px 24px;
     border-radius: 8px;
     background-color: white;
+    cursor: pointer;
+    transition: 0.2s transform, 0.2s box-shadow;
+    box-shadow: 1px 1px;
+}
+
+.task:hover{
+    transform: scale(1.01);
+    box-shadow: 3px 3px;
 }
 
 .task .task-date{
@@ -128,6 +141,7 @@ input.check{
     width: 93%;
     display: flex;
     align-items: center;
+    box-shadow: 1px 1px 1px;
 }   
 
 input.add-task{
