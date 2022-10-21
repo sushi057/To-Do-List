@@ -20,15 +20,17 @@ body{
 
 .container{
     display: flex;
-    margin: 48px 24px;
+    margin: auto 24px;
 }
 
+/* Sidebar */
+
 .sidebar{
-    width: 25%;
+    width: 20%;
     /* border: 1px solid; */
-    min-height: 90vh;
+    min-height: 100vh;
     background-color: var(--background);  
-    padding: 36px;
+    padding: 40px 36px;
 }
 
 .sidebar div{
@@ -67,10 +69,47 @@ body{
 }
 
 .section p.no{
-    color: rgb(85, 83, 83);
+    color: var(--secondary);
 }
 
 div.final-top-cat{
     /* border-bottom: 1px solid gray; */
     margin-bottom: 48px;
+}
+
+/* Tasks List Page */
+.main{
+    padding: 36px;
+    /* background: url('./images/backgrounds/crescent.jpg'); */
+    width: 80%;
+}
+
+.greeting{
+    margin: 8px 0 54px;    
+    font-size: 1.6rem;
+}
+
+#user-name{
+    color: black;
+}
+
+.task{
+    margin-bottom: 6px;
+    display: flex;
+    gap: 16px;
+    border: 1px solid;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.task .task-date{
+    margin-top: 2px;
+    color: var(--secondary);
+    font-size: 1.2rem;
+}
+
+input.check{
+    padding: 24px;
+    border: 0;
+    background-color: black;
 }
