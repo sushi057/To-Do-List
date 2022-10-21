@@ -1,8 +1,68 @@
 :root{
-    --primary: #263D42;
+    --primary: #070C0D;
     --secondary: #8E6C88;
-    --background: #CCDBDC;
+    --background: #E7EFEF;
     --accent: #80CED7;
     --utility: #63C7B2;
 }
 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: var(--primary);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.container{
+    display: flex;
+    margin: 48px 24px;
+}
+
+.sidebar{
+    width: 25%;
+    /* border: 1px solid; */
+    min-height: 90vh;
+    background-color: var(--background);  
+    padding: 36px;
+}
+
+.sidebar div{
+    margin-bottom: 16px;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon{
+    background-color: var(--accent);
+    border-radius: 50%;
+    font-size: 1.4rem;
+    padding: 15px;
+    margin-right: 10px;
+}
+
+.profile-text #name{
+    font-weight: bold;
+}
+
+.categories{
+    margin-top: 42px;
+}
+
+.section{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 18px 0 auto 18px;
+}
+
+div.final-top-cat{
+    /* border-bottom: 1px solid gray; */
+    margin-bottom: 48px;
+}
