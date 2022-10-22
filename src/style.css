@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Vai&display=swap');
+
 :root{
     --primary: #070C0D;
     --secondary: #8E6C88;
@@ -15,8 +17,26 @@
 body{
     background-color: var(--utility);
     color: black;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Noto Sans Vai', sans-serif;
     font-size: 20px;
+}
+
+/* Header */
+.header{
+    /* border-bottom: 2px solid var(--background); */
+    background-color: var(--primary);
+    color: white;
+}
+
+.header h1{
+    padding: 24px 96px;
+    width: fit-content;
+    transition: 0.5s ;
+    text-align: center;
+}
+
+.header h1:hover{
+    transform: scale(1.018);
 }
 
 .container{
@@ -29,9 +49,9 @@ body{
 .sidebar{
     width: 20%;
     /* border: 1px solid; */
-    min-height: 100vh;
+    min-height: 89vh;
     background-color: var(--accent);  
-    padding: 64px 36px;
+    padding: 44px 36px;
 }
 
 .sidebar div{
@@ -45,9 +65,9 @@ body{
 
 .profile-icon{
     background-color: var(--background);
-    border-radius: 50%;
+    border-radius: 88px;
     font-size: 1.4rem;
-    padding: 19px;
+    padding: 19px 24px;
     margin-right: 10px;
     cursor: pointer;
     box-shadow: 1px 1px 1px;
@@ -92,7 +112,7 @@ div.final-top-cat{
 }
 
 .greeting{
-    margin: 32px 0 54px;    
+    margin: 12px 0 54px;    
     font-size: 1.75rem;
 }
 
@@ -141,6 +161,7 @@ input[type="checkbox"]{
     display: flex;
     align-items: center;
     box-shadow: 1px 1px 1px;
+    opacity: 0.9;
 }   
 
 input.add-task{
@@ -154,6 +175,10 @@ input.add-task{
     width: inherit;
 }
 
+.add-task::placeholder{
+    color: white;
+}
+
 button{
     background-color: inherit;
     border: 0;
@@ -161,5 +186,5 @@ button{
     margin: 4px 12px;
     padding: 4px;
     cursor: pointer;
-    color: var(--background)
+    color: var(--background);
 }
