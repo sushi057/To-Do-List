@@ -24,8 +24,8 @@ export default function displayCats() {
     console.log(categoriesArray);
     
     categoriesArray.forEach(category => {
-        console.log('hi');
-        category.element.addEventlistener('click', () => {
+        console.log(category);
+        category.element.addEventListener('click', () => {
         taskList.innerHTML = '';
 
         arrayToTasks(category.array);
