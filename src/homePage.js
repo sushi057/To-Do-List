@@ -1,11 +1,13 @@
 export default function loadHomePage(){
     const homePage = document.createElement('div');
 
-    homePage.innerHTML = ` <div class="header">
+    homePage.innerHTML = `
+    <div class="header">
         <h1>just do it</h1>
     </div>
 
     <div class="container">
+
         <div class="sidebar">
             <div class="profile">
                 <div class="profile-icon">JP</div>
@@ -17,23 +19,23 @@ export default function loadHomePage(){
 
             <div class="categories">
                 <div class="top-cat">
-                    <div class="section">
+                    <div class="section my-day">
                         <p>My Day</p>
                         <p class="no">4</p>
                     </div>
-                    <div class="section">
+                    <div class="section important">
                         <p>Important</p>
                         <p class="no">2</p>
                     </div>
-                    <div class="section">
+                    <div class="section completed">
                         <p>Completed</p>
                         <p class="no">8</p>
                     </div>
-                    <div class="section">
+                    <div class="section due-tasks">
                         <p>Due Tasks</p>
                         <p class="no">2</p>
                     </div>
-                    <div class="section final-top-cat">
+                    <div class="section all-tasks final-top-cat">
                         <p>All</p>
                         <p class="no">13</p>
                     </div>
@@ -55,13 +57,13 @@ export default function loadHomePage(){
             </div>
 
             <div class="tasks-list">
-                <div class="task">
+                <!-- <div class="task">
                     <input type="checkbox" class="check">
                     <div class="task-detail">
                         <p class="task-title">write Journal</p>
                         <p class="task-date">Today</p>
                     </div>
-                </div>
+                </div> -->
                 <div class="task">
                     <input type="checkbox" class="check">
                     <div class="task-detail">
@@ -90,7 +92,9 @@ export default function loadHomePage(){
                 <input class="add-task" type="text" placeholder="Add a task">
             </div>
         </div>
-    </div>`;
+
+    </div>
+    `;
 
     document.body.appendChild(homePage);
 }

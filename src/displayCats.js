@@ -1,4 +1,4 @@
-const displayCategories = ( () => {
+export default function displayCats() {
 
     let allTasks = [];
     let dueTasks = [];
@@ -6,33 +6,33 @@ const displayCategories = ( () => {
     let importantTasks = [];
     let myDayTasks = [];
 
+    const taskList = document.querySelector('.tasks-list');
+    
+    //Categories Factory Function
+    const categoryFactory = (element, array) => {
+        return {element, array};
+    }
+
     const catMyDay = categoryFactory(document.querySelector('.my-day'), myDayTasks);
     const catImortant = categoryFactory(document.querySelector('.important'), importantTasks);
     const catCompleted = categoryFactory(document.querySelector('.completed'), completedTasks);
     const catDue = categoryFactory(document.querySelector('.due-tasks'), dueTasks);
     const catAll = categoryFactory(document.querySelector('.all-tasks'), allTasks);
 
-    const taskList = document.querySelector('.tasks-list');
-       
-    const showCategory = (category) => {
-        category.element.addEventListener('click', () => {
-            taskList.innerHTML = '';
-            taskList.appendChild(arrayToTasks(category.array));
-        })
-    }
+    const categoriesArray = [catMyDay, catCompleted, catDue, catImortant, catAll];
 
-    // const showMyDay = () => {
-    //     const myDayButton = document.querySelector('.my-day');
+    console.log(categoriesArray);
+    
+    categoriesArray.forEach(category => {
+        console.log('hi');
+        category.element.addEventlistener('click', () => {
+        taskList.innerHTML = '';
 
-    //     myDayButton.addEventListener('click', () => {
-    //         taskList.innerHTML = '';
+        arrayToTasks(category.array);
+       }) 
+    });
 
-    //     })
-    //     taskList.appendChild(arrayToTasks(myDayTasks));
-
-    // }
-
-    const arrayToTasks = (array) => {
+    function arrayToTasks(array) {
         array.forEach(element => {
             const newTask = document.createElement('div');
             newTask.classList.add('task');
@@ -47,14 +47,4 @@ const displayCategories = ( () => {
             taskList.appendChild(newTask);
         });
     }
-
-    //Categories Factory Function
-    const categoryFactory = (element, array) => {
-        return {element, array};
-    }
-
-    return {
-        showCategory,
-        
-    }
-})();
+}
