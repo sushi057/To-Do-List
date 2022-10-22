@@ -56,3 +56,22 @@ function appendTaskToList(e){
 function takeTaskDetails(){
 
 }
+
+
+function removeTaskFromList(){
+    const taskCheckBox = document.querySelectorAll('.check');
+    
+    taskCheckBox.forEach((task) => {
+        task.addEventListener('change', () => {
+            if (task.checked) {
+                console.log(this);
+            }
+        })
+    })
+}
+
+removeTaskFromList();
+
+function viewTaskDetails(){
+
+}
