@@ -6,13 +6,12 @@ export default function displayCats() {
     let importantTasks = [];
     let myDayTasks = [];
 
-    const taskList = document.querySelector('.tasks-list');
-    
     //Categories Factory Function
     const categoryFactory = (element, array) => {
         return {element, array};
     }
 
+    const taskList = document.querySelector('.tasks-list');
     const catMyDay = categoryFactory(document.querySelector('.my-day'), myDayTasks);
     const catImortant = categoryFactory(document.querySelector('.important'), importantTasks);
     const catCompleted = categoryFactory(document.querySelector('.completed'), completedTasks);
@@ -24,13 +23,15 @@ export default function displayCats() {
     console.log(categoriesArray);
     
     categoriesArray.forEach(category => {
-        console.log(category);
+        // category.element.querySelector('.no').textContent = category.array.length;
         category.element.addEventListener('click', () => {
         taskList.innerHTML = '';
 
         arrayToTasks(category.array);
        }) 
     });
+
+
 
     function arrayToTasks(array) {
         array.forEach(element => {
@@ -46,5 +47,9 @@ export default function displayCats() {
             `
             taskList.appendChild(newTask);
         });
+    }
+
+    function updateNumberOfTasks(category) {
+
     }
 }
