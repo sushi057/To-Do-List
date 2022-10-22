@@ -94,3 +94,4 @@ export default function loadHomePage(){
 
     document.body.appendChild(homePage);
 }
+

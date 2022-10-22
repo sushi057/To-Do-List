@@ -90,10 +90,6 @@ body{
     justify-content: space-between;
 }
 
-/* .section p{
-    box-shadow: 1px 1px 1px 1px;
-} */
-
 .section p.no{
     color: darkblue;
 }
@@ -164,7 +160,7 @@ input[type="checkbox"]{
     opacity: 0.9;
 }   
 
-input.add-task{
+.task-bar input{
     font-size: 1.3rem;
     border: 0;
     outline: 0;
@@ -175,7 +171,7 @@ input.add-task{
     width: inherit;
 }
 
-.add-task::placeholder{
+.task-bar input::placeholder{
     color: white;
 }
 
