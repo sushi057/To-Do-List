@@ -1,4 +1,4 @@
-import homeFunction from './myDay';
+import loadHomePage from './myDay';
 
 console.log('whats gucci');
 homeFunction
