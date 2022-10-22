@@ -1,7 +1,8 @@
-import loadHomePage from './myDay';
+import loadHomePage from './homePage';
+import './style.css';
 
 console.log('whats gucci');
-homeFunction
+loadHomePage();
 
 
 
