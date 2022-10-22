@@ -30,26 +30,20 @@ export default function displayCats() {
         arrayToTasks(category.array);
        }) 
     });
+}
 
+function arrayToTasks(array) {
+    array.forEach(element => {
+        const newTask = document.createElement('div');
+        newTask.classList.add('task');
 
-
-    function arrayToTasks(array) {
-        array.forEach(element => {
-            const newTask = document.createElement('div');
-            newTask.classList.add('task');
-
-            newTask.innerHTML = `
-            <input type="checkbox" class="check">
-                    <div class="task-detail">
-                        <p class="task-title">${element.name}</p>
-                        <p class="task-date">${element.date}</p>
-                    </div>
-            `
-            taskList.appendChild(newTask);
-        });
-    }
-
-    function updateNumberOfTasks(category) {
-
-    }
+        newTask.innerHTML = `
+        <input type="checkbox" class="check">
+                <div class="task-detail">
+                    <p class="task-title">${element.name}</p>
+                    <p class="task-date">${element.date}</p>
+                </div>
+        `
+        taskList.appendChild(newTask);
+    });
 }
