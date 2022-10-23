@@ -1,6 +1,6 @@
 import loadHomePage from './homePage';
-import displayCats from './displayCats';
 import './style.css';
+import displayCats from './displayCats';
 
 console.log('whats gucci');
 loadHomePage();

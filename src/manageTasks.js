@@ -1,8 +1,9 @@
 class Task {
-    constructor(name, date, details, state){
+    constructor(name, date, details, importance, state){
         this.name = name;
         this.date = date;
         this.dtails = details;
+        this.importance = importance;
         this.state = state;
     }
 
@@ -22,11 +23,12 @@ inputBar.addEventListener('keydown', (e) => {
 })
 
 function checkInput(e){
-
     if (e.target.value !== ''){
         appendTaskToList(e);
     }
-    console.log('null');
+    else{
+        alert('Enter Task Name');
+    }
 }
 
 function appendTaskToList(e){
@@ -47,16 +49,21 @@ function appendTaskToList(e){
     let newTask = new Task(e.target.value);
     listOfTask.push(newTask);
 
+    e.target.value = null;  
+
     taskList.appendChild(singleTask); 
     console.log(listOfTask);   
 }
 
 
-//When Enter is pressed, a dialog appears asking for further details
+//When task is clicked, a dialog appears asking for further details
 function takeTaskDetails(){
 
 }
 
+function viewTaskDetails(){
+
+}
 
 function removeTaskFromList(){
     const taskCheckBox = document.querySelectorAll('.check');
@@ -64,14 +71,17 @@ function removeTaskFromList(){
     taskCheckBox.forEach((task) => {
         task.addEventListener('change', () => {
             if (task.checked) {
-                console.log(this);
+                console.log(task);
+                task.style.pointerEvents = 'none';
             }
         })
     })
 }
 
-removeTaskFromList();
-
-function viewTaskDetails(){
+function categoriseTasks(){
 
 }
+
+removeTaskFromList();
+
+export listOfTask;
