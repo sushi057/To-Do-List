@@ -1,9 +1,7 @@
-import {myDayTasks, importantTasks, completedTasks, dueTasks, allTasks} from './manageTasks';
-
 class Category {
-    constructor(element, array){
+    constructor(element){
         this.element = element;
-        this.array = array;
+        this.array = [];
     }
 
     displayCats(){
@@ -21,12 +19,11 @@ class Category {
     }
 }
 
-const catMyDay = Category(document.querySelector('.my-day'), myDayTasks);
-const catImortant = Category(document.querySelector('.important'), importantTasks);
-const catCompleted = Category(document.querySelector('.completed'), completedTasks);
-const catDue = Category(document.querySelector('.due-tasks'), dueTasks);
-const catAll = Category(document.querySelector('.all-tasks'), allTasks);
-
+const catMyDay = Category(document.querySelector('.my-day'));
+const catImportant = Category(document.querySelector('.important'));
+const catCompleted = Category(document.querySelector('.completed'));
+const catDue = Category(document.querySelector('.due-tasks'));
+const catAll = Category(document.querySelector('.all-tasks'));
 
 
 const arrayToTasks = (array) => {
@@ -46,6 +43,9 @@ const arrayToTasks = (array) => {
 }
 
 export{
-    arrayToTasks,
-    displayCats,
+    catMyDay,
+    catImportant,
+    catCompleted,
+    catDue,
+    catAll,
 }

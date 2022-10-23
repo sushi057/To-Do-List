@@ -1,4 +1,4 @@
-import {displayCats} from './displayCats';
+import { catMyDay, catImportant, catCompleted, catDue, catAll } from './displayCats';
 
 class Task {
     constructor(name, date, details, importance, state){
@@ -14,7 +14,6 @@ class Task {
     }
 }
 
-const allTasks = [];
 
 //Adding a task after user presses 'Enter'
 const inputBar = document.querySelector('.add-task');
