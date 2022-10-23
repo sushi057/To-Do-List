@@ -93,12 +93,16 @@ export default function loadHomePage(){
             <label for="task-date">Date:</label>
             <input id="task-date" type="date" name="task-date" />
             <label for="task-description">Description:</label>
-            <textarea id="task-description" type="text" name="task-name" />
+            <textarea id="task-description" type="text" name="task-name" placeholder="Write task description"></textarea>
+            <p>
             <label for="task-importance">Important:</label>
             <input id="task-importance" type="checkbox" name="task-importance" />
+            </p>
 
-            <input type="button" value="Cancel">
-            <input type="submit" value="Submit">
+            <p>
+            <input type="button" id='button' value="Cancel">
+            <input type="submit" id='submit' value="Submit">
+            </p>
         </form>
     </dialog>
 

@@ -184,3 +184,42 @@ button{
     cursor: pointer;
     color: var(--background);
 }
+
+
+/* Dialog Box */
+dialog{
+    border-radius: 24px;
+    background-color: var(--secondary);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 40px 48px;
+    font-size: 18px;
+}
+
+form input, textarea{
+    outline: 0;
+    border-radius: 24px;
+    padding: 6px 12px;
+    border: 1px solid var(--primary);
+    margin-bottom: 16px;
+    font-family: inherit;
+    color: var(--background);
+    background-color: var(--primary);
+}
+
+#task-importance{
+    height: 20px;
+}
+
+textarea{
+    height: 8rem;
+    width: 18rem;
+}
+
+#button, #submit{
+    justify-self: center;
+    width: 8rem;
+}
