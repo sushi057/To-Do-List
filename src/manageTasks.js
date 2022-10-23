@@ -1,3 +1,5 @@
+import {displayCats} from './displayCats';
+
 class Task {
     constructor(name, date, details, importance, state){
         this.name = name;
@@ -12,24 +14,21 @@ class Task {
     }
 }
 
-const listOfTask = [];
+const allTasks = [];
 
 //Adding a task after user presses 'Enter'
 const inputBar = document.querySelector('.add-task');
 inputBar.addEventListener('keydown', (e) => {
     if (e.key == 'Enter'){
-        checkInput(e);
+        if (e.target.value !== ''){
+            appendTaskToList(e);
+        }
+        else{
+            alert('Enter Task Name');
+        }
     }
 })
 
-function checkInput(e){
-    if (e.target.value !== ''){
-        appendTaskToList(e);
-    }
-    else{
-        alert('Enter Task Name');
-    }
-}
 
 function appendTaskToList(e){
     const taskList = document.querySelector('.tasks-list');
@@ -47,7 +46,7 @@ function appendTaskToList(e){
 
 
     let newTask = new Task(e.target.value);
-    listOfTask.push(newTask);
+    allTasks.push(newTask);
 
     e.target.value = null;  
 
@@ -83,5 +82,3 @@ function categoriseTasks(){
 }
 
 removeTaskFromList();
-
-export listOfTask;

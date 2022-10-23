@@ -1,38 +1,35 @@
-export default function displayCats() {
+import {myDayTasks, importantTasks, completedTasks, dueTasks, allTasks} from './manageTasks';
 
-    let allTasks = [];
-    let dueTasks = [];
-    let completedTasks = [];
-    let importantTasks = [];
-    let myDayTasks = [];
-
-    //Categories Factory Function
-    const categoryFactory = (element, array) => {
-        return {element, array};
+class Category {
+    constructor(element, array){
+        this.element = element;
+        this.array = array;
     }
 
-    const taskList = document.querySelector('.tasks-list');
-    const catMyDay = categoryFactory(document.querySelector('.my-day'), myDayTasks);
-    const catImortant = categoryFactory(document.querySelector('.important'), importantTasks);
-    const catCompleted = categoryFactory(document.querySelector('.completed'), completedTasks);
-    const catDue = categoryFactory(document.querySelector('.due-tasks'), dueTasks);
-    const catAll = categoryFactory(document.querySelector('.all-tasks'), allTasks);
+    displayCats(){
+        this.array.forEach(category => {
+            category.element.addEventListener('click', () => {
+                taskList.innerHTML = '';
+        
+                arrayToTasks(category.array);
+            })
+        })
+    }
 
-    const categoriesArray = [catMyDay, catCompleted, catDue, catImortant, catAll];
-
-    console.log(categoriesArray);
-    
-    categoriesArray.forEach(category => {
-        // category.element.querySelector('.no').textContent = category.array.length;
-        category.element.addEventListener('click', () => {
-        taskList.innerHTML = '';
-
-        arrayToTasks(category.array);
-       }) 
-    });
+    showArray(){
+        return this.array;
+    }
 }
 
-function arrayToTasks(array) {
+const catMyDay = Category(document.querySelector('.my-day'), myDayTasks);
+const catImortant = Category(document.querySelector('.important'), importantTasks);
+const catCompleted = Category(document.querySelector('.completed'), completedTasks);
+const catDue = Category(document.querySelector('.due-tasks'), dueTasks);
+const catAll = Category(document.querySelector('.all-tasks'), allTasks);
+
+
+
+const arrayToTasks = (array) => {
     array.forEach(element => {
         const newTask = document.createElement('div');
         newTask.classList.add('task');
@@ -46,4 +43,9 @@ function arrayToTasks(array) {
         `
         taskList.appendChild(newTask);
     });
+}
+
+export{
+    arrayToTasks,
+    displayCats,
 }
