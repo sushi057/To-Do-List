@@ -189,8 +189,10 @@ button{
 /* Dialog Box */
 dialog{
     border-radius: 24px;
+    margin: 90px auto;
     background-color: var(--secondary);
 }
+
 
 form{
     display: flex;

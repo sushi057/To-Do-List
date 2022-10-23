@@ -5,25 +5,23 @@ class Category {
     }
 
     displayCats(){
-        this.element.addEventListener('click', () => {
-            taskList.innerHTML = '';
-            console.log('display cats');
+        const taskList = document.querySelector('.tasks-list');
+        taskList.innerHTML = '';
+        console.log('display cats');
 
-            this.array.forEach(element => {
-                const newTask = document.createElement('div');
-                newTask.classList.add('task');
-        
-                newTask.innerHTML = `
-                <input type="checkbox" class="check">
-                        <div class="task-detail">
-                            <p class="task-title">${element.name}</p>
-                            <p class="task-date">${element.date}</p>
-                        </div>
-                `
-                taskList.appendChild(newTask);
-            });
-        })
-
+        this.array.forEach(element => {
+            const newTask = document.createElement('div');
+            newTask.classList.add('task');
+    
+            newTask.innerHTML = `
+            <input type="checkbox" class="check">
+                    <div class="task-detail">
+                        <p class="task-title">${element.name}</p>
+                        <p class="task-date">${element.date}</p>
+                    </div>
+            `
+            taskList.appendChild(newTask);
+        });
         console.log(this.element);
     }
 }

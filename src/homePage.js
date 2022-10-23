@@ -91,7 +91,7 @@ export default function loadHomePage(){
             <label for="task-name">Name:</label>
             <input id="task-name" type="text" name="task-name" />
             <label for="task-date">Date:</label>
-            <input id="task-date" type="date" name="task-date" />
+            <input id="task-date" type="date" name="task-date" required />
             <label for="task-description">Description:</label>
             <textarea id="task-description" type="text" name="task-name" placeholder="Write task description"></textarea>
             <p>

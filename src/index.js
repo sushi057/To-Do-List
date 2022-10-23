@@ -5,10 +5,18 @@ import { catMyDay, catImportant, catCompleted, catDue, catAll } from './displayC
 console.log('whats gucci');
 loadHomePage();
 
-document.querySelector('dialog').show();
+
+
+// document.querySelector('dialog').showModal();
+
+
 
 //Display Cats
 console.log(catAll.element);
+document.querySelector('.my-day').addEventListener('click', ()=> {
+    catMyDay.displayCats();
+})
+
 // catMyDay.displayCats();
 // catImportant.displayCats();
 // catCompleted.displayCats();
