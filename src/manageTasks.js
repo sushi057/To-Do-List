@@ -4,7 +4,7 @@ class Task {
     constructor(name, date, details, importance, state){
         this.name = name;
         this.date = date;
-        this.dtails = details;
+        this.details = details;
         this.importance = importance;
         this.state = state;
     }
@@ -41,16 +41,19 @@ function appendTaskToList(e){
             <p class="task-title">${e.target.value}</p>
             <p class="task-date"></p>
             </div>
-        </div>`
+        </div>` 
 
 
     let newTask = new Task(e.target.value);
-    allTasks.push(newTask);
+    catAll.array.push(newTask);
+    catMyDay.array.push(newTask);
 
-    e.target.value = null;  
+    //Consider the date for catDue
+
+    e.target.value = null;
 
     taskList.appendChild(singleTask); 
-    console.log(listOfTask);   
+    console.log(catAll);   
 }
 
 
@@ -74,10 +77,6 @@ function removeTaskFromList(){
             }
         })
     })
-}
-
-function categoriseTasks(){
-
 }
 
 removeTaskFromList();
