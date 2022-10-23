@@ -33,32 +33,6 @@ inputBar.addEventListener('keydown', (e) => {
     }
 })
 
-
-// function appendTaskToList(e){
-//     const taskList = document.querySelector('.tasks-list');
-
-//     const singleTask = document.createElement('div');
-//     singleTask.classList.add('task');
-
-//     singleTask.innerHTML = `
-//         <input type="checkbox" class="check">
-//         <div class="task-detail">
-//             <p class="task-title">${e.target.value}</p>
-//             <p class="task-date"></p>
-//             </div>
-//         </div>` 
-
-
-//     let newTask = new Task(e.target.value);
-//     catAll.array.push(newTask);
-//     catMyDay.array.push(newTask);
-
-//     //Consider the date for catDue
-//     taskList.appendChild(singleTask); 
-//     console.log(catAll);   
-// }
-
-
 //When task is clicked, a dialog appears asking for further details
 function takeTaskDetails(e){
 

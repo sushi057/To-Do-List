@@ -37,10 +37,38 @@ const arrayToTasks = (array) => {
     
 }
 
+function displayCategories() {
+    document.querySelector('.my-day').addEventListener('click', () => {
+        console.log('randi');
+        catMyDay.displayCats();
+    })
+    
+    document.querySelector('.important').addEventListener('click', () => {
+        console.log('randi');
+        catMyDay.displayCats();
+    })
+
+    document.querySelector('.completed').addEventListener('click', () => {
+        console.log('randi');
+        catMyDay.displayCats();
+    })
+
+    document.querySelector('.due-tasks').addEventListener('click', () => {
+        console.log('randi');
+        catMyDay.displayCats();
+    })
+
+    document.querySelector('.all-tasks').addEventListener('click', () => {
+        console.log('randi');
+        catMyDay.displayCats();
+    })
+}
+
 export{
     catMyDay,
     catImportant,
     catCompleted,
     catDue,
     catAll,
+    displayCategories,
 }
