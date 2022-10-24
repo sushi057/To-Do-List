@@ -7,7 +7,6 @@ class Category {
     displayCats(){
         const taskList = document.querySelector('.tasks-list');
         taskList.innerHTML = '';
-        console.log('display cats');
 
         this.array.forEach(element => {
             const newTask = document.createElement('div');
@@ -22,7 +21,6 @@ class Category {
             `
             taskList.appendChild(newTask);
         });
-        console.log(this.array);
     }
 }
 

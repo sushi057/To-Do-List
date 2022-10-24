@@ -10,7 +10,19 @@ class Task {
     }
 
     displayTask(){
-        console.log('todo');
+        const taskList = document.querySelector('.tasks-list');
+        const newTask = document.createElement('div');
+        newTask.classList.add('task');
+
+        newTask.innerHTML = `
+        <input type="checkbox" class="check">
+                <div class="task-detail">
+                    <p class="task-title">${this.name}</p>
+                    <p class="task-date">${this.date}</p>
+                </div>
+                `
+
+                taskList.appendChild(newTask)
     }
 
     removeTask(){
@@ -48,8 +60,6 @@ function takeTaskDetails(e){
 
     document.querySelector('#task-name').value = e.target.value;
     dialogBox.addEventListener('submit', () => {
-        const singleTask = document.createElement('div');
-        singleTask.classList.add('task');
     
         let newTaskName = document.querySelector('#task-name').value;
         let newTaskDate = document.querySelector('#task-date').value;
@@ -60,16 +70,14 @@ function takeTaskDetails(e){
 
         catAll.array.push(newTask);
         catMyDay.array.push(newTask);
-    
-        console.log(catAll);
-        console.log(catCompleted.array);
+
         if(newTaskImp == true){
             catImportant.array.push(newTask);
         }
         
         document.querySelector('form').reset();
 
-        catMyDay.displayCats();
+        newTask.displayTask();
     })
 
 }
