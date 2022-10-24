@@ -9,9 +9,14 @@ class Task {
         this.state = state;
     }
 
-    printTask(){
-        alert(this.name);
+    displayTask(){
+        console.log('todo');
     }
+
+    removeTask(){
+        console.log('todo');
+    }
+
 }
 
 
@@ -52,23 +57,69 @@ function takeTaskDetails(e){
         let newTaskImp =  checkTaskImportance();
     
         let newTask = new Task(newTaskName, newTaskDate, newTaskDesc, newTaskImp);
-        console.log(catAll);
+
         catAll.array.push(newTask);
         catMyDay.array.push(newTask);
     
-        catMyDay.displayCats();
-    
+        console.log(catAll);
+        console.log(catCompleted.array);
         if(newTaskImp == true){
-            catImportant.push(newTask);
+            catImportant.array.push(newTask);
         }
-    
-        newTask = null;
-        newTaskDate = null;
-        newTaskDesc = null;
+        
+        document.querySelector('form').reset();
 
-        dialogBox.close();
+        catMyDay.displayCats();
     })
 
+}
+
+// Future Feature //
+
+function viewTaskDetails(){
+    const listOfTasks = document.querySelectorAll('.task');
+    listOfTasks.forEach((task) => {
+        task.addEventListener('click', () => {
+            dialogBox.showModal();
+
+            dialogBox.addEventListener('submit', () => {
+            
+                let newTaskName = document.querySelector('#task-name').value;
+                let newTaskDate = document.querySelector('#task-date').value;
+                let newTaskDesc = document.querySelector('#task-description').value;
+                let newTaskImp =  checkTaskImportance();
+            
+                let newTask = new Task(newTaskName, newTaskDate, newTaskDesc, newTaskImp);
+                catAll.array.push(newTask);
+                catMyDay.array.push(newTask);
+            
+            
+                if(newTaskImp == true){
+                    catImportant.array.push(newTask);
+                }
+            
+                newTask = null;
+                newTaskDate = null;
+                newTaskDesc = null;
+        
+                dialogBox.close();
+            })
+        })
+    })
+}
+
+
+function removeTaskFromList(){
+    const taskCheckBox = document.querySelectorAll('.check');
+    
+    taskCheckBox.forEach((task) => {
+        task.addEventListener('change', () => {
+            if (task.checked) {
+                console.log(task);
+                task.parentNode.parentNode.removeChild(task.parentNode);
+            }   
+        })
+    })
 }
 
 function checkTaskImportance(){
@@ -79,23 +130,6 @@ function checkTaskImportance(){
     else{
         return false;
     }
-}
-
-function viewTaskDetails(){
-
-}
-
-function removeTaskFromList(){
-    const taskCheckBox = document.querySelectorAll('.check');
-    
-    taskCheckBox.forEach((task) => {
-        task.addEventListener('change', () => {
-            if (task.checked) {
-                console.log(task);
-                task.style.pointerEvents = 'none';
-            }
-        })
-    })
 }
 
 removeTaskFromList();
