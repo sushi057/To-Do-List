@@ -146,6 +146,10 @@ input[type="checkbox"]{
     cursor: pointer;
 }
 
+#delete{
+    align-self: right;
+}
+
 /* Add Task */
 .task-bar{
     position: absolute;

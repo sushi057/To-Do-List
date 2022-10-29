@@ -57,27 +57,6 @@ export default function loadHomePage(){
         </div>
 
         <div class="tasks-list">
-            <div class="task">
-                <input type="checkbox" class="check">
-                <div class="task-detail">
-                    <p class="task-title">Journal</p>
-                    <p class="task-date">Today</p>
-                </div>
-            </div>
-            <div class="task">
-                <input type="checkbox" class="check">
-                <div class="task-detail">
-                    <p class="task-title">Wake Up early</p>
-                    <p class="task-date">Tommorrow</p>
-                </div>
-            </div>
-            <div class="task">
-                <input type="checkbox" class="check">
-                <div class="task-detail">
-                    <p class="task-title">write Article FWESS</p>
-                    <p class="task-date">Sun, Oct 24</p>
-                </div>
-            </div>
         </div>
 
         <div class="task-bar">
@@ -87,10 +66,10 @@ export default function loadHomePage(){
     </div>
 
     <dialog>
-        <form method="dialog">
+        <form method='dialog'>
             <label for="task-name">Name:</label>
             <input id="task-name" type="text" name="task-name" />
-            <label for="task-date">Date:</label>
+            <label for="task-date">Date</label>
             <input id="task-date" type="date" name="task-date" required />
             <label for="task-description">Description:</label>
             <textarea id="task-description" type="text" name="task-name" placeholder="Write task description"></textarea>

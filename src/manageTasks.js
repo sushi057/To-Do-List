@@ -10,30 +10,30 @@ class Task {
     }
 
     displayTask(){
-        const taskList = document.querySelector('.tasks-list');
+        // const taskList = document.querySelector('.tasks-list');
 
-        const newTask = document.createElement('div');
-        newTask.classList.add('task');
+        // const newTask = document.createElement('div');
+        // newTask.classList.add('task');
 
-        newTask.innerHTML = `
-            <input type="checkbox" class="check">
-            <div class="task-detail">
-                <p class="task-title">${this.name}</p>
-                <p class="task-date">${this.date}</p>
-            </div>
-            `
+        // newTask.innerHTML = `
+        //     <input type="checkbox" class="check">
+        //     <div class="task-detail">
+        //         <p class="task-title">${this.name}</p>
+        //         <p class="task-date">${this.date}</p>
+        //     </div>
+        //     `
 
-        taskList.appendChild(newTask)
+        // taskList.appendChild(newTask)
     }
 
     removeTask(){
-        console.log('todo');
+        
     }
 }
 
 const taskList = document.querySelector('.tasks-list');
 const dialogBox = document.querySelector('dialog');
-
+const taskCheckBox = document.querySelector('.check');
 
 //Adding a task after user presses 'Enter'
 const inputBar = document.querySelector('.add-task');
@@ -55,8 +55,6 @@ inputBar.addEventListener('keydown', (e) => {
                 const newTaskImp =  checkTaskImportance();
             
                 const newTask = new Task(newTaskName, newTaskDate, newTaskDesc, newTaskImp);
-        
-                console.log(catMyDay.array);
 
                 catAll.array.push(newTask);
                 catMyDay.array.push(newTask);
@@ -65,9 +63,6 @@ inputBar.addEventListener('keydown', (e) => {
                     catImportant.array.push(newTask);
                 }
 
-                console.log(catMyDay.array);
-        
-                newTask.displayTask();
                 catMyDay.displayCats();
                 document.querySelector('form').reset();
             })
@@ -81,18 +76,18 @@ inputBar.addEventListener('keydown', (e) => {
 })
 
 
-function removeTaskFromList(){
-    const taskCheckBox = document.querySelectorAll('.check');
-    
+function removeTaskFromList(){    
     taskCheckBox.forEach((task) => {
         task.addEventListener('change', () => {
             if (task.checked) {
-                console.log(task);
+                console.log('remove');
                 task.parentNode.parentNode.removeChild(task.parentNode);
             }   
         })
     })
 }
+
+removeTaskFromList();
 
 function checkTaskImportance(){
     if (document.querySelector('#task-importance').checked){
@@ -103,9 +98,6 @@ function checkTaskImportance(){
         return false;
     }
 }
-
-removeTaskFromList();
-
 
 // Future Feature //
 
@@ -139,4 +131,8 @@ function viewTaskDetails(){
             })
         })
     })
+}
+
+export {
+    removeTaskFromList,
 }
